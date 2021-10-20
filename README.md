@@ -9,6 +9,7 @@ Api de comentarios usando patron repositorio
 ***
 Api made whit Repository Pattern C#, for educational purposes
 ### Screenshot
+![swagger-api-comentarios](https://user-images.githubusercontent.com/20881963/138023881-b6ea31bf-d602-4dda-825e-b5d1a7d7b50c.PNG)
 
 ## Technologies
 ***
