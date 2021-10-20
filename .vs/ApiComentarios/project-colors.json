@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "29233243-81cb-4e4f-90d1-7c7b0a664322": {
+      "ProjectGuid": "29233243-81cb-4e4f-90d1-7c7b0a664322",
+      "DisplayName": "ApiComentarios.WebApi",
+      "ColorIndex": 0
+    },
+    "6863eea1-c08b-4d9d-8976-49d47262f0ca": {
+      "ProjectGuid": "6863eea1-c08b-4d9d-8976-49d47262f0ca",
+      "DisplayName": "ApiComentarios.Application",
+      "ColorIndex": 1
+    },
+    "4565b016-6307-405f-9e37-d84baccd7b70": {
+      "ProjectGuid": "4565b016-6307-405f-9e37-d84baccd7b70",
+      "DisplayName": "ApiComentarios.Repository",
+      "ColorIndex": 2
+    },
+    "6287bcaf-bada-4409-8ab1-4e9eff87c91f": {
+      "ProjectGuid": "6287bcaf-bada-4409-8ab1-4e9eff87c91f",
+      "DisplayName": "ApiComentarios.DataAccess",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

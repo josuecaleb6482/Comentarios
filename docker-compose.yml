@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - ${MYSQL_PORT_HOST}:${MYSQL_PORT}
+    container_name: AngularComentariosDb
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MYSQL_ROOT_PASSWORD={MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:

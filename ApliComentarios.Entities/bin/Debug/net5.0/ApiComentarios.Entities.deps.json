@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ApiComentarios.Entities/1.0.0": {
+        "dependencies": {
+          "ApiComentarios.Abtractions": "1.0.0"
+        },
+        "runtime": {
+          "ApiComentarios.Entities.dll": {}
+        }
+      },
+      "ApiComentarios.Abtractions/1.0.0": {
+        "runtime": {
+          "ApiComentarios.Abtractions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ApiComentarios.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ApiComentarios.Abtractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
