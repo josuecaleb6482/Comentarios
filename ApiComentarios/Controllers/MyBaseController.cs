@@ -102,7 +102,7 @@ namespace ApiComentarios.WebApi.Controllers
                 {
                     return NotFound(id);
                 }
-                _repository.Delete(entity.id);
+                await _repository.Delete(entity.id);
 
                 return Ok(new { mensaje = "Comentario eliminado con exito!" });
             }

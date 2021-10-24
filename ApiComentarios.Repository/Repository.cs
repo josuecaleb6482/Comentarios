@@ -18,7 +18,7 @@ namespace ApiComentarios.Repository
         }
 
 
-        public async void Delete(int id)
+        public async Task Delete(int id)
         {
             var entity = await _context.Set<TEntity>().FindAsync(id);
 
