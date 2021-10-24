@@ -5,9 +5,11 @@ namespace ApiComentarios
 {
     public class AplicationDbContext : DbContext
     {
-        public DbSet<Comentario> Comentarios { get; set; }
-        public AplicationDbContext(DbContextOptions<AplicationDbContext> options) : base(options)
+        
+        public AplicationDbContext(DbContextOptions<AplicationDbContext> options) 
+            : base(options)
         {
         }
+        public DbSet<Comentario> Comentarios { get; set; }
     }
 }

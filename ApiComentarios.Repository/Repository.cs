@@ -1,6 +1,7 @@
 ﻿using ApiComentarios.Abtractions;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ApiComentarios.Repository
@@ -19,16 +20,16 @@ namespace ApiComentarios.Repository
 
         public async void Delete(int id)
         {
-            var comentario = await _context.Set<TEntity>().FindAsync(id);
+            var entity = await _context.Set<TEntity>().FindAsync(id);
 
-            _context.Remove(comentario);
+            _context.Remove(entity);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEntity> Save(IEntity entity)
+        public async Task<IEntity> Save(TEntity entity)
         {
-            if (entity.id != 0)
-                _context.Set<IEntity>().Add(entity);
+            if (entity.id == 0)
+                _context.Set<TEntity>().Add(entity);
             else
                 _context.Entry(entity).State = EntityState.Modified;
 
@@ -39,7 +40,7 @@ namespace ApiComentarios.Repository
 
         public async Task<TEntity> GetById(int id)
         {
-            return await _context.Set<TEntity>().FirstOrDefaultAsync();
+            return await _context.Set<TEntity>().Where(x => x.id == id).FirstOrDefaultAsync();
         }
 
         public async Task<IList<TEntity>> GetList()

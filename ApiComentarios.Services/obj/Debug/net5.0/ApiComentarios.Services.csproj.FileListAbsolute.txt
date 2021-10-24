@@ -30,3 +30,4 @@ C:\Users\JFlorez\source\repos\josuecaleb6482\Comentarios\ApiComentarios.Services
 C:\Users\JFlorez\source\repos\josuecaleb6482\Comentarios\ApiComentarios.Services\obj\Debug\net5.0\ApiComentarios.Services.pdb
 C:\Users\JFlorez\source\repos\josuecaleb6482\Comentarios\ApiComentarios.Services\bin\Debug\net5.0\ApiComentarios.Services.deps.json
 C:\Users\JFlorez\source\repos\josuecaleb6482\Comentarios\ApiComentarios.Services\bin\Debug\net5.0\ref\ApiComentarios.Services.dll
+C:\Users\JFlorez\source\repos\josuecaleb6482\Comentarios\ApiComentarios.Services\obj\Debug\net5.0\ApiComentarios.Services.csproj.CopyComplete

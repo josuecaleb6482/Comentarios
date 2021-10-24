@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace ApiComentarios.Repository
 {
-    public interface IRepository<TEntity> where TEntity : class, IEntity
+    public interface IRepository<T> where T : class, IEntity
     {
         void Delete(int id);
-        Task<TEntity> GetById(int id);
-        Task<IList<TEntity>> GetList();
-        Task<IEntity> Save(IEntity entity);
+        Task<T> GetById(int id);
+        Task<IList<T>> GetList();
+        Task<IEntity> Save(T entity);
     }
 }

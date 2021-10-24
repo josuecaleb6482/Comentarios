@@ -9,9 +9,9 @@ namespace ApiComentarios.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MyBaseController<TEntity, TRepository> : ControllerBase
+    public abstract class MyBaseController<TEntity, TRepository> : ControllerBase
         where TEntity : class, IEntity
-        where TRepository : IRepository<Comentario>
+        where TRepository : IRepository<TEntity>
     {
         public readonly TRepository _repository;
         public MyBaseController(TRepository repository)
@@ -56,13 +56,13 @@ namespace ApiComentarios.WebApi.Controllers
 
         // POST api/<ComentarioController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Comentario comentario)
+        public async Task<IActionResult> Post([FromBody] TEntity entity)
         {
             try
             {
-                await _repository.Save(comentario);
+                await _repository.Save(entity);
 
-                return Ok(comentario);
+                return Ok(entity);
             }
             catch (Exception ex)
             {
@@ -72,15 +72,15 @@ namespace ApiComentarios.WebApi.Controllers
 
         // PUT api/<ComentarioController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Comentario comentario)
+        public async Task<IActionResult> Put(int id, [FromBody] TEntity entity)
         {
             try
             {
-                if (id != comentario.id)
+                if (id != entity.id)
                 {
                     return BadRequest(id);
                 }
-                await _repository.Save(comentario);
+                await _repository.Save(entity);
                 return Ok(new { mensaje = "Comentario actualizado con exito!" });
             }
             catch (Exception ex)
@@ -96,13 +96,13 @@ namespace ApiComentarios.WebApi.Controllers
         {
             try
             {
-                var comentario = await _repository.GetById(id);
+                var entity = await _repository.GetById(id);
 
-                if (comentario == null)
+                if (entity == null)
                 {
                     return NotFound(id);
                 }
-                _repository.Delete(comentario.id);
+                _repository.Delete(entity.id);
 
                 return Ok(new { mensaje = "Comentario eliminado con exito!" });
             }
