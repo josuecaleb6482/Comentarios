@@ -11,6 +11,8 @@ Api made whit Repository Pattern C#, for educational purposes
 ### Screenshot
 ![swagger-api-comentarios](https://user-images.githubusercontent.com/20881963/138023881-b6ea31bf-d602-4dda-825e-b5d1a7d7b50c.PNG)
 
+![apicomentarios](https://user-images.githubusercontent.com/20881963/138598366-6487b3c6-7cb3-4c7a-b97d-498cebdaf6a7.JPG)
+
 ## Technologies
 ***
 * [.NETFrameworkCore](https://dotnet.microsoft.com/download/dotnet/5.0)
