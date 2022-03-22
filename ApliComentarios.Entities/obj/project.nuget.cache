@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "54Ys7QsEay7J3lb+fst9Fg9LWddrlPtQzTqytOZGGmJkS4sKs0ZlEGbphVCPNZdjSZeKSE1vGf+qOvRZBKH0FQ==",
+  "dgSpecHash": "eiMhuzBXfU1ifaTvIrXoaUDqtWHA1+t3ft7OOgmlZ5+pw6KR6e1S2d+gYLkk7a5+4SH544XHHtz766XWitr3hg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApliComentarios.Entities\\ApiComentarios.Entities.csproj",
+  "projectFilePath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/ApiComentarios.Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1105,45 +1105,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JFlorez\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/josue/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios\\ApiComentarios.WebApi.csproj",
+      "projectUniqueName": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios/ApiComentarios.WebApi.csproj",
       "projectName": "ApiComentarios.WebApi",
-      "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios\\ApiComentarios.WebApi.csproj",
-      "packagesPath": "C:\\Users\\JFlorez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios\\obj\\",
+      "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios/ApiComentarios.WebApi.csproj",
+      "packagesPath": "/home/josue/.nuget/packages/",
+      "outputPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\JFlorez\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/josue/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.DataAccess\\ApiComentarios.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.DataAccess\\ApiComentarios.DataAccess.csproj"
+            "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.DataAccess/ApiComentarios.DataAccess.csproj": {
+              "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.DataAccess/ApiComentarios.DataAccess.csproj"
             },
-            "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repository.csproj": {
-              "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repository.csproj"
+            "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Repository/ApiComentarios.Repository.csproj": {
+              "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Repository/ApiComentarios.Repository.csproj"
             },
-            "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Services\\ApiComentarios.Services.csproj": {
-              "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Services\\ApiComentarios.Services.csproj"
+            "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Services/ApiComentarios.Services.csproj": {
+              "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Services/ApiComentarios.Services.csproj"
             }
           }
         }
@@ -1195,7 +1188,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }

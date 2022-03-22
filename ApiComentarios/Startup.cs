@@ -31,6 +31,23 @@ namespace ApiComentarios
             services.AddDbContext<AplicationDbContext>(options =>
                     options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
 
+            services.AddAutentication(JwtBearerDefaults.AuthenticationSchema)
+                .AddJwBearer(options=>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = true,
+                    ValidAudience = Configuration["JWT:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(Configuration["JWT:ClaveScreta"])
+                    )
+                };
+            });
+
             services.AddCors(c =>
             {
                 c.AddPolicy("CorsPolicy",
@@ -58,6 +75,7 @@ namespace ApiComentarios
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
