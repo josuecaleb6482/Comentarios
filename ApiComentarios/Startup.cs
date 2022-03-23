@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using ApiComentarios.WebApi.Middelwere;
 
 namespace ApiComentarios
 {
@@ -23,6 +24,8 @@ namespace ApiComentarios
         {
 
             services.AddControllers();
+            services.AddTokenAuthentication(Configuration);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiComentarios", Version = "v1" });
@@ -30,24 +33,7 @@ namespace ApiComentarios
             string mySqlConnection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AplicationDbContext>(options =>
                     options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
-
-            services.AddAutentication(JwtBearerDefaults.AuthenticationSchema)
-                .AddJwBearer(options=>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters()
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = true,
-                    ValidAudience = Configuration["JWT:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(Configuration["JWT:ClaveScreta"])
-                    )
-                };
-            });
-
+            
             services.AddCors(c =>
             {
                 c.AddPolicy("CorsPolicy",

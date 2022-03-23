@@ -58,3 +58,5 @@ C:/Users/JFlorez/source/repos/josuecaleb6482/Comentarios/ApiComentarios.Reposito
 /home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Repository/obj/Debug/net5.0/ApiComentarios.Repository.csproj.CoreCompileInputs.cache
 /home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Repository/obj/Debug/net5.0/ApiComentarios.Repository.csproj.CopyComplete
 /home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Repository/obj/Debug/net5.0/refint/ApiComentarios.Repository.dll
+/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Repository/bin/Debug/net5.0/ApiComentarios.Repository.deps.json
+/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Repository/obj/Debug/net5.0/ref/ApiComentarios.Repository.dll
