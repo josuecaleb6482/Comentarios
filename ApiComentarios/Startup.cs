@@ -1,13 +1,16 @@
 using ApiComentarios.Services;
+using ApiComentarios.WebApi.Middelwere;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using ApiComentarios.WebApi.Middelwere;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace ApiComentarios
 {
@@ -25,7 +28,8 @@ namespace ApiComentarios
         {
 
             services.AddControllers();
-            services.AddTokenAuthentication(Configuration);
+
+            //services.AddTokenAuthentication(Configuration);
 
             services.AddSwaggerGen(c =>
             {
@@ -66,10 +70,31 @@ namespace ApiComentarios
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api Comentarios", Version = "v1" });
 
             });
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidAudience = Configuration["JWT:Audience"],
+                    ValidIssuer = Configuration["JWT:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:ClaveSecreta"]))
+                };
+            });
+
             string mySqlConnection = Configuration.GetConnectionString("DefaultConnection");
+
             services.AddDbContext<AplicationDbContext>(options =>
                     options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)));
-            
+
             services.AddCors(c =>
             {
                 c.AddPolicy("CorsPolicy",
@@ -96,8 +121,9 @@ namespace ApiComentarios
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

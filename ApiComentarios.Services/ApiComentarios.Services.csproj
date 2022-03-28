@@ -9,25 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApiComentarios.Repository\ApiComentarios.Repository.csproj" />
     <ProjectReference Include="..\ApliComentarios.Entities\ApiComentarios.Entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ApiComentarios.Abtractions">
-      <HintPath>..\ApiComentarios.Repository\bin\Debug\net5.0\ApiComentarios.Abtractions.dll</HintPath>
-    </Reference>
-    <Reference Include="ApiComentarios.DataAccess">
-      <HintPath>..\ApiComentarios.DataAccess\obj\Debug\net5.0\ApiComentarios.DataAccess.dll</HintPath>
-    </Reference>
-    <Reference Include="ApiComentarios.Entities">
-      <HintPath>..\ApiComentarios.Repository\bin\Debug\net5.0\ApiComentarios.Entities.dll</HintPath>
-    </Reference>
-    <Reference Include="ApiComentarios.Repository">
-      <HintPath>..\ApiComentarios.Repository\bin\Debug\net5.0\ApiComentarios.Repository.dll</HintPath>
-    </Reference>
-    <Reference Include="ApiComentarios.Services">
-      <HintPath>..\ApiComentarios.Repository\bin\Debug\net5.0\ApiComentarios.Services.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

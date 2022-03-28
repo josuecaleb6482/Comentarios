@@ -1,14 +1,14 @@
 {
   "Version": 1,
   "ProjectMap": {
-    "29233243-81cb-4e4f-90d1-7c7b0a664322": {
-      "ProjectGuid": "29233243-81cb-4e4f-90d1-7c7b0a664322",
-      "DisplayName": "ApiComentarios.WebApi",
+    "78b19c97-43f9-4302-bc1a-2292f34b018e": {
+      "ProjectGuid": "78b19c97-43f9-4302-bc1a-2292f34b018e",
+      "DisplayName": "ApiComentarios.Services",
       "ColorIndex": 0
     },
-    "6863eea1-c08b-4d9d-8976-49d47262f0ca": {
-      "ProjectGuid": "6863eea1-c08b-4d9d-8976-49d47262f0ca",
-      "DisplayName": "ApiComentarios.Application",
+    "6287bcaf-bada-4409-8ab1-4e9eff87c91f": {
+      "ProjectGuid": "6287bcaf-bada-4409-8ab1-4e9eff87c91f",
+      "DisplayName": "ApiComentarios.DataAccess",
       "ColorIndex": 1
     },
     "4565b016-6307-405f-9e37-d84baccd7b70": {
@@ -16,24 +16,29 @@
       "DisplayName": "ApiComentarios.Repository",
       "ColorIndex": 2
     },
-    "6287bcaf-bada-4409-8ab1-4e9eff87c91f": {
-      "ProjectGuid": "6287bcaf-bada-4409-8ab1-4e9eff87c91f",
-      "DisplayName": "ApiComentarios.DataAccess",
+    "35327c37-8411-478e-9256-4f6713de8901": {
+      "ProjectGuid": "35327c37-8411-478e-9256-4f6713de8901",
+      "DisplayName": "ApiComentarios.Entities",
       "ColorIndex": 3
     },
-    "78b19c97-43f9-4302-bc1a-2292f34b018e": {
-      "ProjectGuid": "78b19c97-43f9-4302-bc1a-2292f34b018e",
-      "DisplayName": "ApiComentarios.Services",
-      "ColorIndex": 4
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     },
     "6c4261cc-7926-4896-a0f6-9a3e8ef9b858": {
       "ProjectGuid": "6c4261cc-7926-4896-a0f6-9a3e8ef9b858",
       "DisplayName": "ApiComentarios.Abtractions",
+      "ColorIndex": 4
+    },
+    "29233243-81cb-4e4f-90d1-7c7b0a664322": {
+      "ProjectGuid": "29233243-81cb-4e4f-90d1-7c7b0a664322",
+      "DisplayName": "ApiComentarios.WebApi",
       "ColorIndex": 5
     },
-    "35327c37-8411-478e-9256-4f6713de8901": {
-      "ProjectGuid": "35327c37-8411-478e-9256-4f6713de8901",
-      "DisplayName": "ApiComentarios.Entities",
+    "67e378c7-c799-46e5-9108-3d5909730d8b": {
+      "ProjectGuid": "67e378c7-c799-46e5-9108-3d5909730d8b",
+      "DisplayName": "Solution Items",
       "ColorIndex": 6
     }
   },

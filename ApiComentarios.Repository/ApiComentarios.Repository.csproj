@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -7,8 +7,12 @@
   <ItemGroup>
     <ProjectReference Include="..\ApiComentarios.Abtractions\ApiComentarios.Abtractions.csproj" />
     <ProjectReference Include="..\ApiComentarios.DataAccess\ApiComentarios.DataAccess.csproj" />
-    <ProjectReference Include="..\ApiComentarios.Services\ApiComentarios.Services.csproj" />
-    <ProjectReference Include="..\ApliComentarios.Entities\ApiComentarios.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ApiComentarios.Entities">
+      <HintPath>..\ApliComentarios.Entities\bin\Debug\net5.0\ApiComentarios.Entities.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

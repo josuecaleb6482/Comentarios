@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.DataAccess/ApiComentarios.DataAccess.csproj": {}
+    "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.DataAccess\\ApiComentarios.DataAccess.csproj": {}
   },
   "projects": {
-    "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Abtractions/ApiComentarios.Abtractions.csproj": {
+    "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Abtractions\\ApiComentarios.Abtractions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Abtractions/ApiComentarios.Abtractions.csproj",
+        "projectUniqueName": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Abtractions\\ApiComentarios.Abtractions.csproj",
         "projectName": "ApiComentarios.Abtractions",
-        "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Abtractions/ApiComentarios.Abtractions.csproj",
-        "packagesPath": "/home/josue/.nuget/packages/",
-        "outputPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Abtractions/obj/",
+        "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Abtractions\\ApiComentarios.Abtractions.csproj",
+        "packagesPath": "C:\\Users\\JFlorez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Abtractions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/josue/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\JFlorez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,37 +54,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.DataAccess/ApiComentarios.DataAccess.csproj": {
+    "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.DataAccess\\ApiComentarios.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.DataAccess/ApiComentarios.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.DataAccess\\ApiComentarios.DataAccess.csproj",
         "projectName": "ApiComentarios.DataAccess",
-        "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.DataAccess/ApiComentarios.DataAccess.csproj",
-        "packagesPath": "/home/josue/.nuget/packages/",
-        "outputPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.DataAccess/obj/",
+        "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.DataAccess\\ApiComentarios.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\JFlorez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/josue/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\JFlorez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Services/ApiComentarios.Services.csproj": {
-                "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Services/ApiComentarios.Services.csproj"
-              },
-              "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/ApiComentarios.Entities.csproj": {
-                "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/ApiComentarios.Entities.csproj"
+              "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApliComentarios.Entities\\ApiComentarios.Entities.csproj": {
+                "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApliComentarios.Entities\\ApiComentarios.Entities.csproj"
               }
             }
           }
@@ -117,96 +118,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Services/ApiComentarios.Services.csproj": {
+    "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApliComentarios.Entities\\ApiComentarios.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Services/ApiComentarios.Services.csproj",
-        "projectName": "ApiComentarios.Services",
-        "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Services/ApiComentarios.Services.csproj",
-        "packagesPath": "/home/josue/.nuget/packages/",
-        "outputPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Services/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/josue/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/ApiComentarios.Entities.csproj": {
-                "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/ApiComentarios.Entities.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.10, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/ApiComentarios.Entities.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/ApiComentarios.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApliComentarios.Entities\\ApiComentarios.Entities.csproj",
         "projectName": "ApiComentarios.Entities",
-        "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/ApiComentarios.Entities.csproj",
-        "packagesPath": "/home/josue/.nuget/packages/",
-        "outputPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApliComentarios.Entities/obj/",
+        "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApliComentarios.Entities\\ApiComentarios.Entities.csproj",
+        "packagesPath": "C:\\Users\\JFlorez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApliComentarios.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/josue/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\JFlorez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Abtractions/ApiComentarios.Abtractions.csproj": {
-                "projectPath": "/home/josue/Documentos/proyectos/Comentarios/Comentarios/ApiComentarios.Abtractions/ApiComentarios.Abtractions.csproj"
+              "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Abtractions\\ApiComentarios.Abtractions.csproj": {
+                "projectPath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios.Abtractions\\ApiComentarios.Abtractions.csproj"
               }
             }
           }
@@ -235,7 +176,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

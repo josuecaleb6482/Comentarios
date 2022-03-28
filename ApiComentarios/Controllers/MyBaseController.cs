@@ -1,5 +1,4 @@
 ﻿using ApiComentarios.Abtractions;
-using ApiComentarios.Models;
 using ApiComentarios.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -62,7 +61,7 @@ namespace ApiComentarios.WebApi.Controllers
             {
                 await _repository.Save(entity);
 
-                return Ok(entity);
+                return Created("/", entity);
             }
             catch (Exception ex)
             {

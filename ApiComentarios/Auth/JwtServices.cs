@@ -11,28 +11,48 @@ namespace ApiComentarios.WebApi.Auth
     {
         private readonly string secret;
         private readonly string _expDate;
+        private readonly string _audience;
+        private readonly string _issuer;
 
         public JwtServices(IConfiguration configuration)
         {
             secret = configuration.GetSection("JWT").GetSection("ClaveSecreta").Value;
             _expDate = configuration.GetSection("JWT").GetSection("ExperationDate").Value;
+            _audience = configuration.GetSection("JWT").GetSection("Audience").Value;
+            _issuer = configuration.GetSection("JWT").GetSection("Issuer").Value;
         }
 
-        public string GenerateSecurityToken(string email)
+        public string GenerateSecurityToken(string email, string name, string role)
         {
-            var tokenHandleder =  new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(secret);
-            var tokenDescription = new SecurityTokenDescriptor
+            //Header
+            var symetricSecurityKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(secret));
+            var signingCredentials = new SigningCredentials(
+                symetricSecurityKey, SecurityAlgorithms.HmacSha256);
+            var header = new JwtHeader(signingCredentials);
+
+            //var jwt = new JwtServices(_configuration);
+
+            //Claims
+            var claims = new[]
             {
-                Subject = new ClaimsIdentity(new [] 
-                {
-                    new Claim(ClaimTypes.Email, email)
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(double.Parse(_expDate)),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                new Claim(ClaimTypes.Name, email),
+                new Claim(ClaimTypes.Email, name),
+                new Claim(ClaimTypes.Role, role)
             };
 
-            var token = tokenHandleder.CreateToken(tokenDescription);
+            //Payload
+            var payload = new JwtPayload
+            (
+                _issuer,
+                _audience,
+                claims,
+                DateTime.Now,
+                DateTime.UtcNow.AddMinutes(double.Parse(_expDate))
+            );
+
+            var token = new JwtSecurityToken(header, payload);
+            var tokenHandleder =  new JwtSecurityTokenHandler();
 
             return tokenHandleder.WriteToken(token);
         }
