@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GXbiLetmKzTSGSkWwZ98dF3thGp8zZ5mUBkyzvofxgjtHIR7jrKbXjS8IgB6tpbwo9xLlEFl0mPuTiL84GQe3g==",
+  "dgSpecHash": "mFh20gwA1/KbQUo7lrEFyBFGTT8HogJwsMbf1jL5+tTOMPLqZuydIV2TfBGJ6yc/vUEdjlqkp5q9FLg6WsEoRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JFlorez\\source\\repos\\josuecaleb6482\\Comentarios\\ApiComentarios\\ApiComentarios.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\JFlorez\\Source\\Repos\\Comentarios\\ApiComentarios\\ApiComentarios.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JFlorez\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
@@ -87,7 +87,7 @@
     "C:\\Users\\JFlorez\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
+    "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }

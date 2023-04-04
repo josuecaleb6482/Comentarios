@@ -8,7 +8,7 @@ namespace ApiComentarios.WebApi.Profiles
     {
         public ComentariosProfile()
         {
-            CreateMap<Comentario,ComentarioDTO>();
+            CreateMap<Comentario, ComentarioDTO>();
         }
     }
 }

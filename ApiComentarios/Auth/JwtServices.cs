@@ -1,9 +1,9 @@
-using System;  
-using System.Text;  
-using System.Security.Claims;  
-using Microsoft.IdentityModel.Tokens;  
-using System.IdentityModel.Tokens.Jwt;  
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace ApiComentarios.WebApi.Auth
 {
@@ -31,8 +31,6 @@ namespace ApiComentarios.WebApi.Auth
                 symetricSecurityKey, SecurityAlgorithms.HmacSha256);
             var header = new JwtHeader(signingCredentials);
 
-            //var jwt = new JwtServices(_configuration);
-
             //Claims
             var claims = new[]
             {
@@ -52,10 +50,10 @@ namespace ApiComentarios.WebApi.Auth
             );
 
             var token = new JwtSecurityToken(header, payload);
-            var tokenHandleder =  new JwtSecurityTokenHandler();
+            var tokenHandleder = new JwtSecurityTokenHandler();
 
             return tokenHandleder.WriteToken(token);
         }
     }
-    
+
 }
