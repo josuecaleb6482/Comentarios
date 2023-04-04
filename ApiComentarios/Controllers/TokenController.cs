@@ -1,12 +1,7 @@
 using ApiComentarios.WebApi.Auth;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 using Models;
-using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace ApiComentarios.WebApi.Controllers
 {
@@ -21,6 +16,13 @@ namespace ApiComentarios.WebApi.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Genera un Token Valido
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="name"></param>
+        /// <param name="role"></param>
+        /// <returns></returns>
         [HttpGet]
         public string GetToken(string email, string name, string role)
         {
@@ -28,7 +30,11 @@ namespace ApiComentarios.WebApi.Controllers
 
             return jwt.GenerateSecurityToken(email, name, role);
         }
-
+        /// <summary>
+        /// Autenticacion con usuario y contraseña
+        /// </summary>
+        /// <param name="usuarioLoginDTO"></param>
+        /// <returns>JWT</returns>
         [HttpPost]
         public IActionResult Authentication(UsuarioLoginDTO usuarioLoginDTO)
         {

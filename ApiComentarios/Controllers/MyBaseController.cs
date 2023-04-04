@@ -1,7 +1,7 @@
 ﻿using ApiComentarios.Abtractions;
 using ApiComentarios.Repository;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System.Threading.Tasks;
 
 namespace ApiComentarios.WebApi.Controllers
@@ -18,97 +18,61 @@ namespace ApiComentarios.WebApi.Controllers
             _repository = repository;
         }
 
-        // GET: api/<ComentarioController>
+        // GET: api/<Entity>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public virtual async Task<IActionResult> Get()
         {
-            try
-            {
-                var listComentarios = await _repository.GetList();
-
-                return Ok(listComentarios);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var list = await _repository.GetList();
+            //Respuesta 200
+            return Ok(list);
         }
 
-        // GET api/<ComentarioController>/5
+        // GET api/<Entity>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public virtual async Task<IActionResult> Get(int id)
         {
-            try
+            var entity = await _repository.GetById(id);
+            if (entity == null)
             {
-                var comentario = await _repository.GetById(id);
-                if (comentario == null)
-                {
-                    return NotFound();
-                }
-                return Ok(comentario);
+                return NotFound();
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(entity);
         }
 
-        // POST api/<ComentarioController>
+        // POST api/<Entity>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] TEntity entity)
+        public virtual async Task<IActionResult> Post([FromBody] TEntity entity)
         {
-            try
-            {
-                await _repository.Save(entity);
+            await _repository.Save(entity);
 
-                return Created("/", entity);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Created("/", entity);
         }
 
-        // PUT api/<ComentarioController>/5
+        // PUT api/<Entity>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] TEntity entity)
+        public virtual async Task<IActionResult> Put(int id, [FromBody] TEntity entity)
         {
-            try
+            if (id != entity.id)
             {
-                if (id != entity.id)
-                {
-                    return BadRequest(id);
-                }
-                await _repository.Save(entity);
-                return Ok(new { mensaje = "Comentario actualizado con exito!" });
+                return BadRequest(id);
             }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message);
-            }
+            await _repository.Save(entity);
+            return Ok(new { mensaje = "Comentario actualizado con exito!" });
         }
 
-        // DELETE api/<ComentarioController>/5
+        // DELETE api/<Entity>/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public virtual async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var entity = await _repository.GetById(id);
+            var entity = await _repository.GetById(id);
 
-                if (entity == null)
-                {
-                    return NotFound(id);
-                }
-                await _repository.Delete(entity.id);
-
-                return Ok(new { mensaje = "Comentario eliminado con exito!" });
-            }
-            catch (Exception ex)
+            if (entity == null)
             {
-                return BadRequest(ex.Message);
+                return NotFound(id);
             }
+            await _repository.Delete(entity.id);
+
+            return Ok(new { mensaje = "Comentario eliminado con exito!" });
         }
     }
 }

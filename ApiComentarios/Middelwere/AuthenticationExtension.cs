@@ -1,8 +1,8 @@
-using System.Text;  
-using Microsoft.IdentityModel.Tokens;  
-using Microsoft.Extensions.Configuration;  
-using Microsoft.Extensions.DependencyInjection;  
-using Microsoft.AspNetCore.Authentication.JwtBearer; 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace ApiComentarios.WebApi.Middelwere
 {
@@ -12,7 +12,7 @@ namespace ApiComentarios.WebApi.Middelwere
         {
             var secret = configuration.GetSection("JWT").GetSection("ClaveSecreta").Value;
             var key = Encoding.ASCII.GetBytes(secret);
-            service.AddAuthentication(x => 
+            service.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -25,12 +25,12 @@ namespace ApiComentarios.WebApi.Middelwere
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "localhost",
-                    ValidAudience = "localhost",
+                    ValidIssuer = configuration.GetSection("JWT").GetSection("ValidIssuer").Value,
+                    ValidAudience = configuration.GetSection("JWT").GetSection("ValidAudience").Value,
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 };
             });
-            
+
             return service;
 
         }

@@ -1,4 +1,5 @@
 using ApiComentarios.Services;
+using ApiComentarios.WebApi.Filters;
 using ApiComentarios.WebApi.Middelwere;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -26,8 +27,10 @@ namespace ApiComentarios
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add<MyExceptionHandler>();
+            });
 
             //services.AddTokenAuthentication(Configuration);
 
@@ -104,7 +107,6 @@ namespace ApiComentarios
             });
 
             services.AddScoped<ComentariosServices>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -123,7 +125,6 @@ namespace ApiComentarios
 
             app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.UseEndpoints(endpoints =>
             {

@@ -5,8 +5,8 @@ namespace ApiComentarios
 {
     public class AplicationDbContext : DbContext
     {
-        
-        public AplicationDbContext(DbContextOptions<AplicationDbContext> options) 
+
+        public AplicationDbContext(DbContextOptions<AplicationDbContext> options)
             : base(options)
         {
         }
