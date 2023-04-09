@@ -1,4 +1,4 @@
-namespace Models
+namespace ApiComentarios.Entities.DTOs
 {
     public class UsuarioLoginDTO
     {

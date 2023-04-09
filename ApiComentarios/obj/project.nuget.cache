@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mFh20gwA1/KbQUo7lrEFyBFGTT8HogJwsMbf1jL5+tTOMPLqZuydIV2TfBGJ6yc/vUEdjlqkp5q9FLg6WsEoRg==",
+  "dgSpecHash": "A5xTLL6XA0K/Z3C5WKINhMWF0N8izQdFuNKuBfNhTOA96TiIjgWdYbN7I1LJGl+EbUoJ5jjjKmwg+tcyjfBvIg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JFlorez\\Source\\Repos\\Comentarios\\ApiComentarios\\ApiComentarios.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios\\ApiComentarios.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JFlorez\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h24YlvPifIJ0z7LxTEI0dhhVH/kxHjALzKk9lkh3RhzbhH7VAOq+TCmD0+/12O4XAbeQacCbFBCGiIc4QU4ohw==",
+  "dgSpecHash": "IqqRaXZZVb23us3KlRqFav/2MRj9PexJWS1wAiLFLPwGEKDeJbgT8jlzSEJBNjd4cZKK3DgG8+Ywq5TfzbUaAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JFlorez\\Source\\Repos\\Comentarios\\ApiComentarios.Abtractions\\ApiComentarios.Abtractions.csproj",
+  "projectFilePath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Abtractions\\ApiComentarios.Abtractions.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

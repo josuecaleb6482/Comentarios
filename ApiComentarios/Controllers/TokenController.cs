@@ -1,3 +1,4 @@
+using ApiComentarios.Entities.DTOs;
 using ApiComentarios.WebApi.Auth;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
