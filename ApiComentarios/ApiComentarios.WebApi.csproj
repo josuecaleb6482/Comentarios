@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApiComentarios.DataAccess\ApiComentarios.DataAccess.csproj" />
-    <ProjectReference Include="..\ApiComentarios.Repository\ApiComentarios.Repository.csproj" />
+    <ProjectReference Include="..\ApiComentarios.Repository\ApiComentarios.Repositories.csproj" />
     <ProjectReference Include="..\ApiComentarios.Services\ApiComentarios.Services.csproj" />
   </ItemGroup>
 

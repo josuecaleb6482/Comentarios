@@ -201,10 +201,8 @@ C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\System
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Abtractions.dll
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.DataAccess.dll
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Entities.dll
-C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Repository.dll
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Services.dll
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.DataAccess.pdb
-C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Repository.pdb
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Services.pdb
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Abtractions.pdb
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Entities.pdb
@@ -229,3 +227,5 @@ C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\obj\Debug\net5.0\refint
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\obj\Debug\net5.0\ApiComentarios.WebApi.pdb
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\obj\Debug\net5.0\ApiComentarios.WebApi.genruntimeconfig.cache
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\obj\Debug\net5.0\ref\ApiComentarios.WebApi.dll
+C:\Users\JFlorez\source\repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Repositories.dll
+C:\Users\JFlorez\source\repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Repositories.pdb

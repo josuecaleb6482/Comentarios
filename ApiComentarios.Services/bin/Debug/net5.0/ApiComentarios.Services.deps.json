@@ -9,7 +9,7 @@
       "ApiComentarios.Services/1.0.0": {
         "dependencies": {
           "ApiComentarios.Entities": "1.0.0",
-          "ApiComentarios.Repository": "1.0.0",
+          "ApiComentarios.Repositories": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.10"
         },
         "runtime": {
@@ -162,13 +162,13 @@
           "ApiComentarios.Entities.dll": {}
         }
       },
-      "ApiComentarios.Repository/1.0.0": {
+      "ApiComentarios.Repositories/1.0.0": {
         "dependencies": {
           "ApiComentarios.Abtractions": "1.0.0",
           "ApiComentarios.DataAccess": "1.0.0"
         },
         "runtime": {
-          "ApiComentarios.Repository.dll": {}
+          "ApiComentarios.Repositories.dll": {}
         }
       }
     }
@@ -292,7 +292,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ApiComentarios.Repository/1.0.0": {
+    "ApiComentarios.Repositories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

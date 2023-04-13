@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5nYjAAXcMHRnBh4Q3YKGazcbmr01eIHyHVPxFQK+FqoFZ+u3jijQhptQAi95IYSQ3tDmDVVjSDpEJhmfwTNuNg==",
+  "dgSpecHash": "frZS20hv41hBxZcL8a1y98YDaoc4UPN+XR1G+0PRvIrSrnYEu7gGLuOg5tpjiEo66l6IU8qS3z9lsqtQD3kfzA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repository.csproj",
+  "projectFilePath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repositories.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",

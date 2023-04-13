@@ -638,9 +638,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repository.csproj",
-      "projectName": "ApiComentarios.Repository",
-      "projectPath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repositories.csproj",
+      "projectName": "ApiComentarios.Repositories",
+      "projectPath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repositories.csproj",
       "packagesPath": "C:\\Users\\JFlorez\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\obj\\",
       "projectStyle": "PackageReference",

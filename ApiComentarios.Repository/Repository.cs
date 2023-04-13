@@ -1,12 +1,13 @@
-﻿using ApiComentarios.Abtractions;
+﻿using ApiComentarios.Abtractions.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace ApiComentarios.Repository
+namespace ApiComentarios.Repositories
 {
-
     public abstract class Repository<TEntity, TContext> : IRepository<TEntity>
         where TEntity : class, IEntity
         where TContext : DbContext
@@ -46,6 +47,22 @@ namespace ApiComentarios.Repository
         public async Task<IList<TEntity>> GetList()
         {
             return await _context.Set<TEntity>().ToListAsync();
+        }
+
+        public async Task<IList<TEntity>> GetByPage(int pageNumber, int sizePage)
+        {
+            return await _context.Set<TEntity>()
+            .OrderBy(p => p.id)
+            .Skip((pageNumber - 1) * sizePage)
+            .Take(sizePage)
+            .ToListAsync();
+        }
+
+        public async Task<IList<TEntity>> Find(Expression<Func<TEntity, bool>> criteria)
+        {
+            return await _context.Set<TEntity>()
+            .Where(criteria)
+            .ToListAsync();
         }
     }
 }

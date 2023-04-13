@@ -1,6 +1,9 @@
+using ApiComentarios.Abtractions.Interfaces;
+using ApiComentarios.Models;
+using ApiComentarios.Repositories;
+using ApiComentarios.Repositories.Comments;
 using ApiComentarios.Services;
 using ApiComentarios.WebApi.Filters;
-using ApiComentarios.WebApi.Middelwere;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +13,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
 namespace ApiComentarios
@@ -106,7 +108,8 @@ namespace ApiComentarios
                     .AllowAnyHeader());
             });
 
-            services.AddScoped<ComentariosServices>();
+            services.AddScoped<IRepository<Comentario>, RepositoryComment>();
+            services.AddScoped<ICommentService, CommentServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

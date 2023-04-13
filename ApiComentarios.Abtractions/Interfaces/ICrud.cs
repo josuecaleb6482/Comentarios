@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ApiComentarios.Abtractions
+namespace ApiComentarios.Abtractions.Interfaces
 {
     public interface ICrud<T> where T : class, IEntity
     {
-        Task<T> Save(T entity);
+        Task<IEntity> Save(T entity);
         Task<IList<T>> GetList();
         Task<T> GetById(int id);
-        void Delete(int id);
+        Task Delete(int id);
     }
 }

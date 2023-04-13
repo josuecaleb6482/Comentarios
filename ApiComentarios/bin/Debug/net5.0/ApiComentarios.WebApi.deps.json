@@ -34,7 +34,7 @@
       "ApiComentarios.WebApi/1.0.0": {
         "dependencies": {
           "ApiComentarios.DataAccess": "1.0.0",
-          "ApiComentarios.Repository": "1.0.0",
+          "ApiComentarios.Repositories": "1.0.0",
           "ApiComentarios.Services": "1.0.0",
           "AutoMapper": "11.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
@@ -1178,22 +1178,22 @@
           "ApiComentarios.Entities.dll": {}
         }
       },
-      "ApiComentarios.Repository/1.0.0": {
+      "ApiComentarios.Repositories/1.0.0": {
         "dependencies": {
           "ApiComentarios.Abtractions": "1.0.0",
           "ApiComentarios.DataAccess": "1.0.0"
         },
         "runtime": {
-          "ApiComentarios.Repository.dll": {}
+          "ApiComentarios.Repositories.dll": {}
         },
         "compile": {
-          "ApiComentarios.Repository.dll": {}
+          "ApiComentarios.Repositories.dll": {}
         }
       },
       "ApiComentarios.Services/1.0.0": {
         "dependencies": {
           "ApiComentarios.Entities": "1.0.0",
-          "ApiComentarios.Repository": "1.0.0",
+          "ApiComentarios.Repositories": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.10"
         },
         "runtime": {
@@ -3469,7 +3469,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ApiComentarios.Repository/1.0.0": {
+    "ApiComentarios.Repositories/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

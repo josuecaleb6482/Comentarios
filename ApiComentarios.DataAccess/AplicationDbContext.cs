@@ -1,5 +1,6 @@
 ﻿using ApiComentarios.Models;
 using Microsoft.EntityFrameworkCore;
+using Models;
 
 namespace ApiComentarios
 {
@@ -11,5 +12,6 @@ namespace ApiComentarios
         {
         }
         public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet<UsuarioInfo> UsuarioInfos { get; set; }
     }
 }

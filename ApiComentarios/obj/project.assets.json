@@ -1406,7 +1406,7 @@
           "bin/placeholder/ApiComentarios.Entities.dll": {}
         }
       },
-      "ApiComentarios.Repository/1.0.0": {
+      "ApiComentarios.Repositories/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -1414,10 +1414,10 @@
           "ApiComentarios.DataAccess": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/ApiComentarios.Repository.dll": {}
+          "bin/placeholder/ApiComentarios.Repositories.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ApiComentarios.Repository.dll": {}
+          "bin/placeholder/ApiComentarios.Repositories.dll": {}
         }
       },
       "ApiComentarios.Services/1.0.0": {
@@ -1425,7 +1425,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "ApiComentarios.Entities": "1.0.0",
-          "ApiComentarios.Repository": "1.0.0",
+          "ApiComentarios.Repositories": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.10"
         },
         "compile": {
@@ -4871,10 +4871,10 @@
       "path": "../ApliComentarios.Entities/ApiComentarios.Entities.csproj",
       "msbuildProject": "../ApliComentarios.Entities/ApiComentarios.Entities.csproj"
     },
-    "ApiComentarios.Repository/1.0.0": {
+    "ApiComentarios.Repositories/1.0.0": {
       "type": "project",
-      "path": "../ApiComentarios.Repository/ApiComentarios.Repository.csproj",
-      "msbuildProject": "../ApiComentarios.Repository/ApiComentarios.Repository.csproj"
+      "path": "../ApiComentarios.Repository/ApiComentarios.Repositories.csproj",
+      "msbuildProject": "../ApiComentarios.Repository/ApiComentarios.Repositories.csproj"
     },
     "ApiComentarios.Services/1.0.0": {
       "type": "project",
@@ -4885,7 +4885,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "ApiComentarios.DataAccess >= 1.0.0",
-      "ApiComentarios.Repository >= 1.0.0",
+      "ApiComentarios.Repositories >= 1.0.0",
       "ApiComentarios.Services >= 1.0.0",
       "AutoMapper >= 11.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
@@ -4934,8 +4934,8 @@
             "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.DataAccess\\ApiComentarios.DataAccess.csproj": {
               "projectPath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.DataAccess\\ApiComentarios.DataAccess.csproj"
             },
-            "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repository.csproj": {
-              "projectPath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repository.csproj"
+            "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repositories.csproj": {
+              "projectPath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Repository\\ApiComentarios.Repositories.csproj"
             },
             "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Services\\ApiComentarios.Services.csproj": {
               "projectPath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios.Services\\ApiComentarios.Services.csproj"

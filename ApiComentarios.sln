@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiComentarios.WebApi", "Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiComentarios.Entities", "ApliComentarios.Entities\ApiComentarios.Entities.csproj", "{35327C37-8411-478E-9256-4F6713DE8901}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiComentarios.Repository", "ApiComentarios.Repository\ApiComentarios.Repository.csproj", "{4565B016-6307-405F-9E37-D84BACCD7B70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiComentarios.Repositories", "ApiComentarios.Repository\ApiComentarios.Repositories.csproj", "{4565B016-6307-405F-9E37-D84BACCD7B70}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiComentarios.DataAccess", "ApiComentarios.DataAccess\ApiComentarios.DataAccess.csproj", "{6287BCAF-BADA-4409-8AB1-4E9EFF87C91F}"
 EndProject

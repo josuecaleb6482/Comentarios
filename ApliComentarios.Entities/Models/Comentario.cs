@@ -1,4 +1,4 @@
-﻿using ApiComentarios.Abtractions;
+﻿using ApiComentarios.Abtractions.Interfaces;
 using Models;
 using System;
 using System.ComponentModel.DataAnnotations;

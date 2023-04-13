@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApiComentarios.Repository\ApiComentarios.Repository.csproj" />
+    <ProjectReference Include="..\ApiComentarios.Repository\ApiComentarios.Repositories.csproj" />
     <ProjectReference Include="..\ApliComentarios.Entities\ApiComentarios.Entities.csproj" />
   </ItemGroup>
 
