@@ -31,8 +31,12 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
+bin/
 
 .vs/
+.vs\ApiComentarios\*
+.vs/ApiComentarios/*
+
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
@@ -92,6 +96,38 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.obj
+*.exe
+*.dll
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.opensdf
+*.unsuccessfulbuild
+ipch/
+[Bb]in/
+[Oo]bj/# Build results
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+*/bin/Debug/.net05
 
 # Chutzpah Test files
 _Chutzpah*
@@ -106,7 +142,7 @@ ipch/
 *.cachefile
 *.VC.db
 *.VC.VC.opendb
-
+*.vs/*
 # Visual Studio profiler
 *.psess
 *.vsp
@@ -348,3 +384,18 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/ApiComentarios/obj/project.nuget.cache
+/ApiComentarios/obj/project.assets.json
+/ApiComentarios/obj/ApiComentarios.WebApi.csproj.nuget.dgspec.json
+/ApiComentarios.Repository/bin/Debug/net5.0/ApiComentarios.Abtractions.pdb
+/ApliComentarios.Entities/obj/Debug/net5.0/ApiComentarios.Entities.csproj.AssemblyReference.cache
+/ApliComentarios.Entities/bin/Debug/net5.0/ApiComentarios.Abtractions.pdb
+/ApliComentarios.Entities/bin/Debug/net5.0/ApiComentarios.Abtractions.dll
+/.vs/ApiComentarios/v17/.suo
+/.vs/ApiComentarios/DesignTimeBuild/.dtbcache.v2
+/ApliComentarios.Entities/bin/Debug/net5.0/ApiComentarios.Entities.dll
+/ApliComentarios.Entities/bin/Debug/net5.0/ApiComentarios.Entities.pdb
+/ApliComentarios.Entities/obj/Debug/net5.0/ref/ApiComentarios.Entities.dll
+/ApliComentarios.Entities/obj/Debug/net5.0/refint/ApiComentarios.Entities.dll
+/ApiComentarios.Services/obj/Debug/net5.0/ApiComentarios.Services.csproj.FileListAbsolute.txt
+/ApiComentarios/obj/Debug/net5.0/ApiComentarios.WebApi.csproj.FileListAbsolute.txt
