@@ -229,3 +229,7 @@ C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\obj\Debug\net5.0\ApiCom
 C:\Users\JFlorez\Source\Repos\Comentarios\ApiComentarios\obj\Debug\net5.0\ref\ApiComentarios.WebApi.dll
 C:\Users\JFlorez\source\repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Repositories.dll
 C:\Users\JFlorez\source\repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.Repositories.pdb
+C:\Users\JFlorez\source\repos\Comentarios\ApiComentarios\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Users\JFlorez\source\repos\Comentarios\ApiComentarios\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+C:\Users\JFlorez\source\repos\Comentarios\ApiComentarios\bin\Debug\net5.0\ApiComentarios.WebApi.xml
+C:\Users\JFlorez\source\repos\Comentarios\ApiComentarios\obj\Debug\net5.0\ApiComentarios.WebApi.xml

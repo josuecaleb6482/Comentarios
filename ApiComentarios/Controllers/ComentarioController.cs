@@ -1,11 +1,12 @@
-﻿using ApiComentarios.Abtractions.Interfaces;
+﻿using ApiComentarios.DTOSs;
 using ApiComentarios.Entities.DTOs;
 using ApiComentarios.Models;
-using ApiComentarios.Repositories.Comments;
 using ApiComentarios.Services;
 using ApiComentarios.WebApi.Controllers;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace ApiComentarios.Controllers
@@ -14,14 +15,21 @@ namespace ApiComentarios.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class ComentarioController : MyBaseController<Comentario, ICommentService>
+    public class ComentarioController : MyBaseController<Comments, ICommentService>
     {
-        public ComentarioController(ICommentService service) : base(service)
+        private readonly IMapper _mapper;
+        public ComentarioController(ICommentService service, IMapper mapper) : base(service)
         {
+            _mapper = mapper;
         }
 
-        // GET: api/<Entity>
+        /// <summary>
+        /// Lista los comentarios y los pagina 
+        /// </summary>
+        /// <param name="paginacionDTO"></param>
+        /// <returns>Listado de comentarios</returns>
         [HttpGet]
+        [Authorize(Policy = "RequireEditorRole")]
         public virtual async Task<IActionResult> Get([FromQuery] PaginacionDTO paginacionDTO)
         {
             ConfigurarPaginacion(paginacionDTO);
@@ -31,52 +39,81 @@ namespace ApiComentarios.Controllers
             return Ok(list);
         }
 
-        //// GET api/<Entity>/5
-        //[HttpGet("{id}")]
-        //public virtual async Task<IActionResult> Get(int id)
-        //{
-        //    var entity = await _repository.GetById(id);
-        //    if (entity == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Ok(entity);
-        //}
+        /// <summary>
+        /// Trae un comentario por Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Comentario individual</returns>
+        [HttpGet("{id}")]
+        public virtual async Task<IActionResult> Get(int id)
+        {
+            var entity = await _service.GetCommentById(id);
 
-        //// POST api/<Entity>
-        //[HttpPost]
-        //public virtual async Task<IActionResult> Post([FromBody] TEntity entity)
-        //{
-        //    await _repository.Save(entity);
+            if (entity == null)
+            {
+                return NotFound(new 
+                {
+                    message = "Comentario no encontrado",
+                });
+            }
+            return Ok(entity);
+        }
 
-        //    return Created("/", entity);
-        //}
+        /// <summary>
+        /// Crea un comentario con titulo
+        /// </summary>
+        /// <param name="commentDTO"></param>
+        /// <returns>Los datos del comentario</returns>
+        [HttpPost]
+        public virtual async Task<IActionResult> Post([FromBody] ComentarioDTO commentDTO)
+        {
+            var comment = _mapper.Map<Comments>(commentDTO);
+            await _service.SaveComment(comment);
 
-        //// PUT api/<Entity>/5
-        //[HttpPut("{id}")]
-        //public virtual async Task<IActionResult> Put(int id, [FromBody] TEntity entity)
-        //{
-        //    if (id != entity.id)
-        //    {
-        //        return BadRequest(id);
-        //    }
-        //    await _repository.Save(entity);
-        //    return Ok(new { mensaje = "Comentario actualizado con exito!" });
-        //}
+            return Created($"/{comment.Id}", commentDTO);
+        }
 
-        //// DELETE api/<Entity>/5
-        //[HttpDelete("{id}")]
-        //public virtual async Task<IActionResult> Delete(int id)
-        //{
-        //    var entity = await _repository.GetById(id);
+        /// <summary>
+        /// Actualiza un comentario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateComment">Contiene el titulo y texto</param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public virtual async Task<IActionResult> Put(int id, [FromBody] UpdateCommentDTO updateComment)
+        {
+            var comment = await _service.GetCommentById(id);
 
-        //    if (entity == null)
-        //    {
-        //        return NotFound(id);
-        //    }
-        //    await _repository.Delete(entity.id);
+            if (comment == null)
+            {
+                return NotFound(new { mensaje = "No existe el comentario", });
+            }
 
-        //    return Ok(new { mensaje = "Comentario eliminado con exito!" });
-        //}
+            comment.Titulo = updateComment.Titulo ?? comment.Titulo;
+            comment.Texto = updateComment.Texto ?? comment.Texto;
+
+            await _service.SaveComment(comment);
+
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Elimina un comentario
+        /// </summary>
+        /// <param name="id">Id del comentario</param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public virtual async Task<IActionResult> Delete(int id)
+        {
+            var comment = await _service.GetCommentById(id);
+
+            if (comment == null)
+            {
+                return NotFound(id);
+            }
+            await _service.DeleteComment(comment.Id);
+
+            return Ok(new { mensaje = "Comentario eliminado con exito!" });
+        }
     }
 }

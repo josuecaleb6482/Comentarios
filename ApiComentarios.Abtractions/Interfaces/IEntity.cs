@@ -7,6 +7,6 @@ namespace ApiComentarios.Abtractions.Interfaces
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int id { get; set; }
+        int Id { get; set; }
     }
 }

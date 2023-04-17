@@ -20,15 +20,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{B6CACFF1-6288-468E-B51B-FB109FB868F3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Persistence", "3. Persistence", "{B6CACFF1-6288-468E-B51B-FB109FB868F3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{ADE2BC1F-9D5F-4F00-ABF5-E8DBDEF95511}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Services", "4. Services", "{ADE2BC1F-9D5F-4F00-ABF5-E8DBDEF95511}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{462B334D-06BB-4963-9EA9-44529FDC4EC1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Presentation", "5. Presentation", "{462B334D-06BB-4963-9EA9-44529FDC4EC1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstraction", "Abstraction", "{502589A2-6A93-4E7B-A5F0-667EEB2CF129}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Abstraction", "1. Abstraction", "{502589A2-6A93-4E7B-A5F0-667EEB2CF129}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5C2FD76D-59C6-4E08-86BB-1F2981CAEC4D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{5C2FD76D-59C6-4E08-86BB-1F2981CAEC4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

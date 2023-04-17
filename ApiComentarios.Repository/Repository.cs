@@ -29,7 +29,7 @@ namespace ApiComentarios.Repositories
 
         public async Task<IEntity> Save(TEntity entity)
         {
-            if (entity.id == 0)
+            if (entity.Id == 0)
                 _context.Set<TEntity>().Add(entity);
             else
                 _context.Entry(entity).State = EntityState.Modified;
@@ -41,7 +41,7 @@ namespace ApiComentarios.Repositories
 
         public async Task<TEntity> GetById(int id)
         {
-            return await _context.Set<TEntity>().Where(x => x.id == id).FirstOrDefaultAsync();
+            return await _context.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task<IList<TEntity>> GetList()
@@ -52,17 +52,24 @@ namespace ApiComentarios.Repositories
         public async Task<IList<TEntity>> GetByPage(int pageNumber, int sizePage)
         {
             return await _context.Set<TEntity>()
-            .OrderBy(p => p.id)
+            .OrderBy(p => p.Id)
             .Skip((pageNumber - 1) * sizePage)
             .Take(sizePage)
             .ToListAsync();
         }
 
-        public async Task<IList<TEntity>> Find(Expression<Func<TEntity, bool>> criteria)
+        public async Task<IList<TEntity>> SearchList(Expression<Func<TEntity, bool>> criteria)
         {
             return await _context.Set<TEntity>()
             .Where(criteria)
             .ToListAsync();
+        }
+
+        public async Task<TEntity> Find(Expression<Func<TEntity, bool>> criteria)
+        {
+            return await _context.Set<TEntity>()
+            .Where(criteria)
+            .FirstOrDefaultAsync();
         }
     }
 }

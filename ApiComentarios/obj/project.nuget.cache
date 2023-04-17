@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "X8VAHcAAowQqGmWv7WwBX1tAWflZCjP1P5pXWSkHx2c3K2X8vkcguWu0UKkyjafRK5E0JwO8bf6njzwJvW4Fgg==",
+  "dgSpecHash": "FdSN+zv56thoANmZ/dtb7PI3Nw/gsfJns3Ajdn86Egc9X2zoA+6gGWwk1aM1/HaARSOI7jNGlSqaIXphRLI0Og==",
   "success": true,
   "projectFilePath": "C:\\Users\\JFlorez\\source\\repos\\Comentarios\\ApiComentarios\\ApiComentarios.WebApi.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\JFlorez\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.18\\microsoft.aspnetcore.authentication.jwtbearer.3.1.18.nupkg.sha512",
+    "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\JFlorez\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",

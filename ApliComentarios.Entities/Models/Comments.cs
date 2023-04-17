@@ -5,18 +5,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ApiComentarios.Models
 {
-    public class Comentario : IEntity
+    public class Comments : IEntity
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         [Required]
         public string Titulo { get; set; }
         [Required]
-        public int IdUsuario { get; set; }
+        public int UserId { get; set; }
         [Required]
         public string Texto { get; set; }
         [Required]
         public DateTime FechaCreacion { get; set; }
 
-        public virtual UsuarioInfo IdUserInfo { get; set; }
+        public virtual User UserInfo { get; set; }
     }
 }

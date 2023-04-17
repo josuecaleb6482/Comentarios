@@ -1,10 +1,18 @@
-﻿namespace ApiComentarios.DTOSs
+﻿using System.ComponentModel.DataAnnotations;
+using System;
+
+namespace ApiComentarios.DTOSs
 {
     public class ComentarioDTO
     {
-        public int id { get; set; }
+        [Required]
         public string Titulo { get; set; }
-        public string Creador { get; set; }
+        [Required]
+        public int UserId { get; set; }
+        [Required]
         public string Texto { get; set; }
+        [Required]
+        public DateTime FechaCreacion { get; set; }
+
     }
 }

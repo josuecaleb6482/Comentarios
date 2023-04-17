@@ -1,5 +1,6 @@
 ﻿using ApiComentarios.Abtractions.Interfaces;
 using ApiComentarios.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,41 +8,37 @@ namespace ApiComentarios.Services
 {
     public class CommentServices : ICommentService
     {
-        private readonly IRepository<Comentario> _comentarioRepository;
+        private readonly IRepository<Comments> _commentRepository;
 
-        public CommentServices(IRepository<Comentario> comentarioRepository)
+        public CommentServices(IRepository<Comments> commentRepository)
         {
-            _comentarioRepository = comentarioRepository;
+            _commentRepository = commentRepository;
         }
 
-        public async Task<Comentario> CreateComment(Comentario comentario)
+        public async Task<Comments> SaveComment(Comments comment)
         {
-            return (Comentario)await _comentarioRepository.Save(comentario);
+            comment.FechaCreacion = DateTime.UtcNow;
+            return (Comments)await _commentRepository.Save(comment);
         }
 
-        public async Task<IList<Comentario>> GetComments()
+        public async Task<Comments> GetCommentById(int commentId)
         {
-            return await _comentarioRepository.GetList();
+            return await _commentRepository.GetById(commentId);
         }
 
-        public async Task<Comentario> GetCommentById(int comentarioId)
+        public async Task DeleteComment(int commentId)
         {
-            return await _comentarioRepository.GetById(comentarioId);
+            await _commentRepository.Delete(commentId);
         }
 
-        public async Task DeleteComment(int comentarioId)
+        public async Task<IList<Comments>> FindComment(string text)
         {
-            await _comentarioRepository.Delete(comentarioId);
+            return await _commentRepository.SearchList(x => x.Texto.Contains(text));
         }
 
-        public async Task<IList<Comentario>> FindComment(string text)
+        public async Task<IList<Comments>> GetComments(int pageNumber, int pageSize)
         {
-            return await _comentarioRepository.Find(x => x.Texto.Contains(text));
-        }
-
-        public async Task<IList<Comentario>> GetComments(int pageNumber, int pageSize)
-        {
-            return await _comentarioRepository.GetByPage(pageNumber, pageSize);
+            return await _commentRepository.GetByPage(pageNumber, pageSize);
         }
     }
 }

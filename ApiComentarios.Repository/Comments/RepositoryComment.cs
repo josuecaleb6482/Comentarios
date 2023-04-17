@@ -1,8 +1,6 @@
-﻿using ApiComentarios.Models;
-
-namespace ApiComentarios.Repositories.Comments
+﻿namespace ApiComentarios.Repositories.Comments
 {
-    public class RepositoryComment : Repository<Comentario, AplicationDbContext>
+    public class RepositoryComment : Repository<Models.Comments, AplicationDbContext>
     {
         public RepositoryComment(AplicationDbContext context) : base(context)
         {

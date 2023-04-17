@@ -6,6 +6,7 @@ using System;
 using System.Data;
 using System.Data.Common;
 using System.IO;
+using System.Security.Policy;
 
 namespace ApiComentarios.WebApi.Filters
 {
@@ -94,7 +95,14 @@ namespace ApiComentarios.WebApi.Filters
                 errorMessage = "Error interno del servidor.";
             }
 
-            context.Result = new JsonResult(new { error = errorMessage });
+            context.Result = new JsonResult(
+                new 
+                {
+                    code = statusCode,
+                    url = "/",
+                    error = errorMessage 
+                });
+
             context.HttpContext.Response.StatusCode = statusCode;
             context.ExceptionHandled = true;
 

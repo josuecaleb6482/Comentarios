@@ -1,11 +1,13 @@
+using ApiComentarios.Abtractions.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Models;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace ApiComentarios.WebApi.Auth
+namespace ApiComentarios.Services.Auth
 {
     public class JwtServices
     {
