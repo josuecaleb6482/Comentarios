@@ -1,4 +1,5 @@
 ﻿using ApiComentarios.DTOSs;
+using ApiComentarios.Entities.DTOs;
 using ApiComentarios.Models;
 using AutoMapper;
 using Models;
@@ -9,7 +10,10 @@ namespace ApiComentarios.WebApi.Profiles
     {
         public ComentariosProfile()
         {
-            CreateMap<Comments, ComentarioDTO>()
+            CreateMap<Comments, CommentDTO>()
+            .ReverseMap();
+
+            CreateMap<User, UserInfoDTO>()
             .ReverseMap();
         }
     }

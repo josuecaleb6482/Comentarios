@@ -3,10 +3,8 @@ using ApiComentarios.Entities.DTOs;
 using ApiComentarios.Models;
 using ApiComentarios.Services;
 using ApiComentarios.WebApi.Controllers;
-using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 
 namespace ApiComentarios.Controllers
@@ -17,16 +15,15 @@ namespace ApiComentarios.Controllers
 
     public class ComentarioController : MyBaseController<Comments, ICommentService>
     {
-        private readonly IMapper _mapper;
-        public ComentarioController(ICommentService service, IMapper mapper) : base(service)
+
+        public ComentarioController(ICommentService service) : base(service)
         {
-            _mapper = mapper;
         }
 
         /// <summary>
         /// Lista los comentarios y los pagina 
         /// </summary>
-        /// <param name="paginacionDTO"></param>
+        /// <param name="paginacionDTO">Objeto Paginacion</param>
         /// <returns>Listado de comentarios</returns>
         [HttpGet]
         [Authorize(Policy = "RequireEditorRole")]
@@ -35,40 +32,31 @@ namespace ApiComentarios.Controllers
             ConfigurarPaginacion(paginacionDTO);
 
             var list = await _service.GetComments(paginacionDTO.pageNumber, paginacionDTO.maxItemsPage);
-            //Respuesta 200
+
             return Ok(list);
         }
 
         /// <summary>
         /// Trae un comentario por Id
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Identificador</param>
         /// <returns>Comentario individual</returns>
         [HttpGet("{id}")]
         public virtual async Task<IActionResult> Get(int id)
         {
-            var entity = await _service.GetCommentById(id);
-
-            if (entity == null)
-            {
-                return NotFound(new 
-                {
-                    message = "Comentario no encontrado",
-                });
-            }
-            return Ok(entity);
+            var comment = await _service.GetCommentById(id);
+            return Ok(comment);
         }
 
         /// <summary>
-        /// Crea un comentario con titulo
+        /// Crea un comentario con título
         /// </summary>
-        /// <param name="commentDTO"></param>
+        /// <param name="commentDTO">Objeto Comentario</param>
         /// <returns>Los datos del comentario</returns>
         [HttpPost]
-        public virtual async Task<IActionResult> Post([FromBody] ComentarioDTO commentDTO)
+        public virtual async Task<IActionResult> Post([FromBody] CommentDTO commentDTO)
         {
-            var comment = _mapper.Map<Comments>(commentDTO);
-            await _service.SaveComment(comment);
+            var comment = await _service.SaveComment(commentDTO);
 
             return Created($"/{comment.Id}", commentDTO);
         }
@@ -76,24 +64,13 @@ namespace ApiComentarios.Controllers
         /// <summary>
         /// Actualiza un comentario
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Identificador</param>
         /// <param name="updateComment">Contiene el titulo y texto</param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public virtual async Task<IActionResult> Put(int id, [FromBody] UpdateCommentDTO updateComment)
+        public virtual async Task<IActionResult> Put(int id, [FromBody] CommentDTO updateComment)
         {
-            var comment = await _service.GetCommentById(id);
-
-            if (comment == null)
-            {
-                return NotFound(new { mensaje = "No existe el comentario", });
-            }
-
-            comment.Titulo = updateComment.Titulo ?? comment.Titulo;
-            comment.Texto = updateComment.Texto ?? comment.Texto;
-
-            await _service.SaveComment(comment);
-
+            await _service.SaveComment(updateComment, id);
             return NoContent();
         }
 
@@ -105,13 +82,7 @@ namespace ApiComentarios.Controllers
         [HttpDelete("{id}")]
         public virtual async Task<IActionResult> Delete(int id)
         {
-            var comment = await _service.GetCommentById(id);
-
-            if (comment == null)
-            {
-                return NotFound(id);
-            }
-            await _service.DeleteComment(comment.Id);
+            await _service.DeleteComment(id);
 
             return Ok(new { mensaje = "Comentario eliminado con exito!" });
         }

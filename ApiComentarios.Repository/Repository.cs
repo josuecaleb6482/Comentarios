@@ -1,4 +1,5 @@
 ﻿using ApiComentarios.Abtractions.Interfaces;
+using ApiComentarios.Repositories.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,14 @@ namespace ApiComentarios.Repositories
 
         public async Task<TEntity> GetById(int id)
         {
-            return await _context.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
+            var entity = await _context.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
+            
+            if (entity == null)
+            {
+                throw new ResourceNotFoundException(typeof(TEntity), $"Recurso no encontrado {entity.Id}");
+            }
+
+            return entity;
         }
 
         public async Task<IList<TEntity>> GetList()
