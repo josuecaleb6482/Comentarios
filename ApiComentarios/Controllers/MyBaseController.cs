@@ -1,9 +1,7 @@
 ﻿using ApiComentarios.Abtractions.Interfaces;
 using ApiComentarios.Entities.DTOs;
-using ApiComentarios.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Threading.Tasks;
 
 namespace ApiComentarios.WebApi.Controllers
 {
@@ -30,3 +28,4 @@ namespace ApiComentarios.WebApi.Controllers
 
     }
 }
+

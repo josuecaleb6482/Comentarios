@@ -1,9 +1,11 @@
 ﻿using ApiComentarios.Abtractions.Interfaces;
 using ApiComentarios.DTOSs;
 using ApiComentarios.Models;
-using AutoMapper;
+using MapsterMapper;
+using Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ApiComentarios.Services
@@ -11,36 +13,42 @@ namespace ApiComentarios.Services
     public class CommentServices : ICommentService
     {
         private readonly IRepository<Comments> _commentRepository;
+        private readonly IRepository<User> _userRepository;
         private readonly IMapper _mapper;
-        public CommentServices(IRepository<Comments> commentRepository)
+        public CommentServices(IRepository<Comments> commentRepository, IRepository<User> userRepository)
         {
             _commentRepository = commentRepository;
+            _userRepository = userRepository;
         }
 
-        public async Task<Comments> SaveComment(CommentDTO commentDTO, int commentId)
+        public async Task<CommentDTO> SaveComment(CommentDTO commentDTO)
         {
-            var comment = new Comments();
-
-            if(commentId == 0)
+            var comment = new Comments()
             {
-                comment = _mapper.Map<Comments>(commentDTO);
-            }
-            else
-            {
-                comment = await _commentRepository.GetById(commentId);
-                comment.Titulo = commentDTO.Titulo;
-                comment.Texto = commentDTO.Texto;
-            }
-                       
-            comment.FechaCreacion = DateTime.UtcNow;
+                Id = commentDTO.Id,
+                Title = commentDTO.Title,
+                Text = commentDTO.Text,
+                UserId = commentDTO.UserId,
+                FechaCreacion = DateTime.UtcNow
+            };
 
-            return (Comments)await _commentRepository.Save(comment);
+            return (CommentDTO)await _commentRepository.Save(comment);
         }
 
         public async Task<CommentDTO> GetCommentById(int commentId)
         {
             var comment = await _commentRepository.GetById(commentId);
-            return _mapper.Map<CommentDTO>(comment);
+
+            var response = new CommentDTO()
+            {
+                Id = comment.Id,
+                Title = comment.Title,
+                Text = comment.Text,
+                UserId = comment.Id,
+                FechaCreacion = DateTime.UtcNow
+            };
+
+            return response;
         }
 
         public async Task DeleteComment(int commentId)
@@ -49,14 +57,22 @@ namespace ApiComentarios.Services
             await _commentRepository.Delete(comment.Id);
         }
 
-        public async Task<IList<Comments>> FindComment(string text)
+        public async Task<IList<CommentDTO>> FindComment(string text)
         {
-            return await _commentRepository.SearchList(x => x.Texto.Contains(text));
+            return _mapper.Map<List<CommentDTO>>(await _commentRepository.SearchList(x => x.Text.Contains(text)));
         }
 
-        public async Task<IList<Comments>> GetComments(int pageNumber, int pageSize)
+        public async Task<IList<CommentDTO>> GetComments(int pageNumber, int pageSize)
         {
-            return await _commentRepository.GetByPage(pageNumber, pageSize);
+            var list = await _commentRepository.GetByPage(pageNumber, pageSize);
+            return list.Select(x => new CommentDTO
+            {
+                Id = x.Id,
+                UserId = x.UserId,
+                Text = x.Text,
+                Title = x.Title,
+                FechaCreacion = x.FechaCreacion,
+            }).ToList();
         }
     }
 }

@@ -1,12 +1,11 @@
 using ApiComentarios.Abtractions.Interfaces;
 using ApiComentarios.Models;
-using ApiComentarios.Repositories;
 using ApiComentarios.Repositories.Comments;
 using ApiComentarios.Repositories.Users;
 using ApiComentarios.Services;
 using ApiComentarios.Services.Users;
 using ApiComentarios.WebApi.Filters;
-using ApiComentarios.WebApi.Profiles;
+using MapsterMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,13 +13,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Models;
+using System;
 using System.IO;
 using System.Reflection;
-using System;
 using System.Text;
 
 namespace ApiComentarios
@@ -41,8 +39,6 @@ namespace ApiComentarios
             {
                 options.Filters.Add<MyExceptionHandler>();
             });
-
-            services.AddAutoMapper(typeof(ComentariosProfile));
 
             services.AddSwaggerGen(c =>
             {
@@ -68,11 +64,13 @@ namespace ApiComentarios
                 });
 
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Api Comentarios", Version = "v1" });
-                
+
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddScoped<IMapper, Mapper>();
 
             services.AddAuthentication(options =>
             {

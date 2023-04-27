@@ -26,11 +26,11 @@ namespace ApiComentarios.DataAccess.Migrations
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Texto")
+                    b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Titulo")
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
 

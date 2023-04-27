@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiComentarios.DataAccess.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20230415141019_InitialMigration")]
+    [Migration("20230418004514_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,11 +28,11 @@ namespace ApiComentarios.DataAccess.Migrations
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Texto")
+                    b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Titulo")
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
 

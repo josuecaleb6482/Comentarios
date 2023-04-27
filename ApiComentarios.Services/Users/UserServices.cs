@@ -1,9 +1,8 @@
 ﻿using ApiComentarios.Abtractions.Interfaces;
 using ApiComentarios.Entities.DTOs;
-using AutoMapper;
+using MapsterMapper;
 using Microsoft.Extensions.Configuration;
 using Models;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

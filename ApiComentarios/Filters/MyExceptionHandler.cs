@@ -7,7 +7,6 @@ using System;
 using System.Data;
 using System.Data.Common;
 using System.IO;
-using System.Security.Policy;
 
 namespace ApiComentarios.WebApi.Filters
 {
@@ -90,7 +89,7 @@ namespace ApiComentarios.WebApi.Filters
                 statusCode = 500;
                 errorMessage = $"Error al conectarse a la base de datos: {dbEx.Message}";
             }
-            else if(context.Exception is ResourceNotFoundException resourceNotFound)
+            else if (context.Exception is ResourceNotFoundException resourceNotFound)
             {
                 statusCode = 404;
                 errorMessage = $"Recurso no encontrado: {resourceNotFound.Message}  ({resourceNotFound.ResourceType.Name})";
@@ -103,18 +102,18 @@ namespace ApiComentarios.WebApi.Filters
             }
 
             context.Result = new JsonResult(
-                new 
+                new
                 {
                     code = statusCode,
                     url = "/",
-                    error = errorMessage 
+                    error = errorMessage
                 });
 
             context.HttpContext.Response.StatusCode = statusCode;
             context.ExceptionHandled = true;
 
             _logger.LogError($"Error: {context.HttpContext.Response.StatusCode}");
-            
+
         }
     }
 

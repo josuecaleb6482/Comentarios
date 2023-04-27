@@ -22,7 +22,7 @@ namespace ApiComentarios.WebApi.Controllers
         /// <summary>
         /// Autenticacion con usuario y contraseña
         /// </summary>
-        /// <param name="usuarioLoginDTO"></param>
+        /// <param name="usuarioLoginDTO">contiene el usuario y la contraseña</param>
         /// <returns>JWT</returns>
         [HttpPost]
         public async Task<IActionResult> Authentication(UsuarioLoginDTO usuarioLoginDTO)
