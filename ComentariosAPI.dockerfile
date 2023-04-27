@@ -1,17 +1,16 @@
 # Instrucciones para construir la imagen de contenedor
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
-WORKDIR /app
+WORKDIR /App
 
-# Copiar archivos de proyecto y restaurar dependencias
-COPY *.csproj ./
-RUN dotnet restore
-
-# Copiar y construir la aplicación
+# Copy everything
 COPY . ./
-RUN dotnet publish -c Release -o out
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish ./ApiComentarios/ApiComentarios.WebApi.csproj -c Release -o out
 
-# Instrucciones para ejecutar la aplicación
+# Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
-WORKDIR /app
-COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "ApiComentarios.WebApi"]
+WORKDIR /App
+COPY --from=build-env /App/out .
+ENTRYPOINT ["dotnet", "ApiComentarios.WebApi.dll"]

@@ -29,6 +29,7 @@ $ dotnet tool update --global dotnet-ef
 $ dotnet add package Microsoft.EntityFrameworkCore.Design
 $ dotnet add package MySql.EntityFrameworkCore
 $ dotnet ef database update
+$ docker build -t api-comments-build -f ComentariosAPI.dockerfile .
 ```
 
 SDK Ubuntu
