@@ -407,3 +407,10 @@ MigrationBackup/
 /ApiComentarios.Services/obj/ApiComentarios.Services.csproj.nuget.g.props
 /ApiComentarios.Repository/obj/project.nuget.cache
 /ApiComentarios.Repository/obj/project.assets.json
+/ApiComentarios/bin/Debug/net5.0/appsettings.json
+/ApiComentarios/bin/Debug/net5.0/ApiComentarios.WebApi.runtimeconfig.dev.json
+/.vs/ApiComentarios/config/applicationhost.config
+/ApiComentarios.DataAccess/obj/Debug/net5.0/ApiComentarios.DataAccess.csproj.CoreCompileInputs.cache
+/ApiComentarios.Abtractions/obj/Debug/net5.0/ApiComentarios.Abtractions.csproj.CoreCompileInputs.cache
+/ApiComentarios/obj/Debug/net5.0/ApiComentarios.WebApi.genruntimeconfig.cache
+/ApiComentarios/obj/Debug/net5.0/ApiComentarios.WebApi.csproj.CoreCompileInputs.cache
