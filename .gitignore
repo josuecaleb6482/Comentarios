@@ -399,3 +399,11 @@ MigrationBackup/
 /ApliComentarios.Entities/obj/Debug/net5.0/refint/ApiComentarios.Entities.dll
 /ApiComentarios.Services/obj/Debug/net5.0/ApiComentarios.Services.csproj.FileListAbsolute.txt
 /ApiComentarios/obj/Debug/net5.0/ApiComentarios.WebApi.csproj.FileListAbsolute.txt
+/ApiComentarios/obj/Debug/net5.0/ApiComentarios.WebApi.assets.cache
+/ApiComentarios/obj/Debug/net5.0/ApiComentarios.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+/ApiComentarios/obj/ApiComentarios.WebApi.csproj.nuget.g.props
+/ApiComentarios/obj/ApiComentarios.WebApi.csproj.nuget.g.targets
+/ApiComentarios.Services/obj/Debug/net5.0/ApiComentarios.Services.GeneratedMSBuildEditorConfig.editorconfig
+/ApiComentarios.Services/obj/ApiComentarios.Services.csproj.nuget.g.props
+/ApiComentarios.Repository/obj/project.nuget.cache
+/ApiComentarios.Repository/obj/project.assets.json
