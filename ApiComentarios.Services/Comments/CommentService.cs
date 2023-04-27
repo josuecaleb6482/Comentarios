@@ -32,7 +32,11 @@ namespace ApiComentarios.Services
                 FechaCreacion = DateTime.UtcNow
             };
 
-            return (CommentDTO)await _commentRepository.Save(comment);
+            var result = await _commentRepository.Save(comment);
+
+            commentDTO.Id = result.Id;
+
+            return commentDTO;
         }
 
         public async Task<CommentDTO> GetCommentById(int commentId)
