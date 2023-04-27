@@ -1,12 +1,14 @@
-﻿using ApiComentarios.Abtractions;
+﻿using ApiComentarios.Abtractions.Interfaces;
+using ApiComentarios.Repositories.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace ApiComentarios.Repository
+namespace ApiComentarios.Repositories
 {
-
     public abstract class Repository<TEntity, TContext> : IRepository<TEntity>
         where TEntity : class, IEntity
         where TContext : DbContext
@@ -28,7 +30,7 @@ namespace ApiComentarios.Repository
 
         public async Task<IEntity> Save(TEntity entity)
         {
-            if (entity.id == 0)
+            if (entity.Id == 0)
                 _context.Set<TEntity>().Add(entity);
             else
                 _context.Entry(entity).State = EntityState.Modified;
@@ -40,12 +42,42 @@ namespace ApiComentarios.Repository
 
         public async Task<TEntity> GetById(int id)
         {
-            return await _context.Set<TEntity>().Where(x => x.id == id).FirstOrDefaultAsync();
+            var entity = await _context.Set<TEntity>().Where(x => x.Id == id).FirstOrDefaultAsync();
+            
+            if (entity == null)
+            {
+                throw new ResourceNotFoundException(typeof(TEntity), $"Recurso no encontrado {entity.Id}");
+            }
+
+            return entity;
         }
 
         public async Task<IList<TEntity>> GetList()
         {
             return await _context.Set<TEntity>().ToListAsync();
+        }
+
+        public async Task<IList<TEntity>> GetByPage(int pageNumber, int sizePage)
+        {
+            return await _context.Set<TEntity>()
+            .OrderBy(p => p.Id)
+            .Skip((pageNumber - 1) * sizePage)
+            .Take(sizePage)
+            .ToListAsync();
+        }
+
+        public async Task<IList<TEntity>> SearchList(Expression<Func<TEntity, bool>> criteria)
+        {
+            return await _context.Set<TEntity>()
+            .Where(criteria)
+            .ToListAsync();
+        }
+
+        public async Task<TEntity> Find(Expression<Func<TEntity, bool>> criteria)
+        {
+            return await _context.Set<TEntity>()
+            .Where(criteria)
+            .FirstOrDefaultAsync();
         }
     }
 }

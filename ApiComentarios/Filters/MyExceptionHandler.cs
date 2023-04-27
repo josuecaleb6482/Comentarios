@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApiComentarios.Repositories.Exceptions;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -88,18 +89,31 @@ namespace ApiComentarios.WebApi.Filters
                 statusCode = 500;
                 errorMessage = $"Error al conectarse a la base de datos: {dbEx.Message}";
             }
+            else if (context.Exception is ResourceNotFoundException resourceNotFound)
+            {
+                statusCode = 404;
+                errorMessage = $"Recurso no encontrado: {resourceNotFound.Message}  ({resourceNotFound.ResourceType.Name})";
+
+            }
             else
             {
                 statusCode = 500;
                 errorMessage = "Error interno del servidor.";
             }
 
-            context.Result = new JsonResult(new { error = errorMessage });
+            context.Result = new JsonResult(
+                new
+                {
+                    code = statusCode,
+                    url = "/",
+                    error = errorMessage
+                });
+
             context.HttpContext.Response.StatusCode = statusCode;
             context.ExceptionHandled = true;
 
             _logger.LogError($"Error: {context.HttpContext.Response.StatusCode}");
-            
+
         }
     }
 

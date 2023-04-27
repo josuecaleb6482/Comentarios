@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="11.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Mapster" Version="5.3.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.10">
       <PrivateAssets>all</PrivateAssets>
@@ -25,7 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ApiComentarios.DataAccess\ApiComentarios.DataAccess.csproj" />
-    <ProjectReference Include="..\ApiComentarios.Repository\ApiComentarios.Repository.csproj" />
+    <ProjectReference Include="..\ApiComentarios.Repository\ApiComentarios.Repositories.csproj" />
     <ProjectReference Include="..\ApiComentarios.Services\ApiComentarios.Services.csproj" />
   </ItemGroup>
 

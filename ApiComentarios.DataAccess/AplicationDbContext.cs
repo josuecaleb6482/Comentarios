@@ -1,5 +1,7 @@
-﻿using ApiComentarios.Models;
+﻿using ApiComentarios.DataAccess.Configuretions;
+using ApiComentarios.Models;
 using Microsoft.EntityFrameworkCore;
+using Models;
 
 namespace ApiComentarios
 {
@@ -10,6 +12,12 @@ namespace ApiComentarios
             : base(options)
         {
         }
-        public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet<Comments> Comentarios { get; set; }
+        public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+        }
     }
 }
